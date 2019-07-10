@@ -1,3 +1,7 @@
+/*
+Given an array of integers, return a new array such that each element at index i of the 
+new array is the product of all the numbers in the original array except the one at i.
+*/
 #include <iostream>
 #include <vector>
 
@@ -8,27 +12,21 @@ vector<int> findproduct(vector<int> a){
 	int product=1;
 	for(int i=1;i<a.size();i++){
 		product=product*a[i];
-		
 	}
 	v.push_back(product);
 	
 	for(int i=1;i<a.size();i++){
 		int ans=(v[i-1]*a[i-1])/a[i];
 		v.push_back(ans);
-	}
-	
+	}	
 	return v;
 }
 
 void printarray(vector<int> &v){
 	for(int i=0;i<v.size();i++){
-		cout<<v[i]<<" ";
-		
-		
+		cout<<v[i]<<" ";	
 	}
 	cout<<endl;
-	
-	
 }
 
 main(){
